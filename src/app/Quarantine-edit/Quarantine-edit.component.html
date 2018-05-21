@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Edit Quarantine</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="updateQuarantine(Quarantine._id)" #QuarantineForm="ngForm">
+        <div class="form-group">
+          <label for="name">GateName</label>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.gateName" name="isbn" required>
+        </div>
+        <div class="form-group">
+          <label for="name">TestName</label>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.testName" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Risk</label>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.Risk" name="author" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Description</label>
+          <input type="number" class="form-control" [(ngModel)]="Quarantine.description" name="published_year" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Failure Count</label>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.failureCount" name="publisher" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!QuarantineForm.form.valid">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
