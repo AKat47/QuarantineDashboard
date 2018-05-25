@@ -9,15 +9,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuarantineComponent implements OnInit {
 
-  Quarantines: any;
+  Quarantines: any = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('/Quarantine').subscribe(data => {
-      console.log(data);
-      this.Quarantines = data;
-    });
+    // this.http.get('/Quarantine').subscribe(data => {
+    //   console.log(data);
+    //   this.Quarantines = data;
+    // });
+    this.Quarantines.push({gateName: "xx", testName:"xx", _id:"111",images:["Demo_FAIL.png","Demo_FAIL1.png"]});
   }
 
 }

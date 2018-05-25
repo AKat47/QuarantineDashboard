@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 
 var Quarantine = require('./routes/Quarantine');
 var app = express();
@@ -19,7 +20,13 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/Quarantines', express.static(path.join(__dirname, 'dist')));
 app.use('/Quarantine', Quarantine);
+app.use('/images/Demo_FAIL.png', function(req, res){
 
+      var img = fs.readFileSync('./images/Demo_FAIL.png');
+      res.writeHead(200, {'Content-Type': 'image/png' });
+      res.end(img, 'binary');
+    
+  });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

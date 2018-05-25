@@ -18,9 +18,13 @@
         <td>{{ Quarantine.testName }}</td>
         <td>{{ Quarantine.gateName }}</td>
           <td>
-          <div *ngFor="let img of Quarantine.images">
-            <img src="./images/{{img}}"/>
-          </div>
+            <div class="png-container">
+              <div *ngFor="let img of Quarantine.images" class="png-wrapper">
+                <a target="_blank" href="/images/{{img}}">
+                  <img src="/images/{{img}}"/>
+                </a>
+              </div>
+            </div>
         </td>
         <td><a [routerLink]="['/Quarantine-details', Quarantine._id]">Show Detail</a></td>
       </tr>
