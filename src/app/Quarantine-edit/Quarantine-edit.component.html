@@ -5,23 +5,27 @@
       <form (ngSubmit)="updateQuarantine(Quarantine._id)" #QuarantineForm="ngForm">
         <div class="form-group">
           <label for="name">GateName</label>
-          <input type="text" class="form-control" [(ngModel)]="Quarantine.gateName" name="isbn" required>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.gateName" name="gate" required>
         </div>
         <div class="form-group">
           <label for="name">TestName</label>
-          <input type="text" class="form-control" [(ngModel)]="Quarantine.testName" name="title" required>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.testName" name="test" required>
         </div>
         <div class="form-group">
           <label for="name">Risk</label>
-          <input type="text" class="form-control" [(ngModel)]="Quarantine.Risk" name="author" required>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.Risk" name="risk" required>
         </div>
         <div class="form-group">
           <label for="name">Description</label>
-          <input type="number" class="form-control" [(ngModel)]="Quarantine.description" name="published_year" required>
+          <input type="number" class="form-control" [(ngModel)]="Quarantine.description" name="description" required>
         </div>
         <div class="form-group">
           <label for="name">Failure Count</label>
-          <input type="text" class="form-control" [(ngModel)]="Quarantine.failureCount" name="publisher" required>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.failureCount" name="failurecount" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Url</label>
+          <input type="text" class="form-control" [(ngModel)]="Quarantine.images" name="url" required>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-success" [disabled]="!QuarantineForm.form.valid">Update</button>
