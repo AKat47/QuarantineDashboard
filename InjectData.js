@@ -39,8 +39,8 @@ testData = {
     "lastUpdated" : new Date('December 17, 1995 03:24:00'),
     "__v" : 0,
     "images" : [ 
-        "C:\Screenshotlocation\Demo_FAIL.png",
-		"C:\Screenshotlocation\Demo_FAIL1.png"
+        "DemoFAIL.png",
+		"DemoFAIL1.png"
     ]
 };
 
@@ -50,7 +50,7 @@ for(var j=0;j<testCount;j++)
 {
 	MongoClient.connect(url, function(err, db) 
 	{
-		var dbo = db.db("mean-angular5");
+		var dbo = db.db("CentralizedDashboard");
 		id = new ObjectId();
 		testData._id=id;
 		testData.gateName=gateArray[Math.floor(Math.random()*gateArray.length)];

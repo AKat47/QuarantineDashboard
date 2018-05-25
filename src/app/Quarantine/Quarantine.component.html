@@ -19,7 +19,7 @@
         <td>{{ Quarantine.gateName }}</td>
           <td>
           <div *ngFor="let img of Quarantine.images">
-            <img src="img.url"/>
+            <img src="./images/{{img}}"/>
           </div>
         </td>
         <td><a [routerLink]="['/Quarantine-details', Quarantine._id]">Show Detail</a></td>
