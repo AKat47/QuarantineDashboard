@@ -8,6 +8,7 @@ var quarantineSchema = new mongoose.Schema({
   lastrun: String,
   failureCount: String,
   lastUpdated: { type: Date, default: Date.now },
+  images : Array
 });
 
 module.exports = mongoose.model('Quarantine', quarantineSchema);

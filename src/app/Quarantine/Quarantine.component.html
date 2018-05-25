@@ -10,12 +10,18 @@
         <th>Test Name</th>
         <th>Gate Name</th>
         <th>Action</th>
+        <th>Url</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let Quarantine of Quarantines">
         <td>{{ Quarantine.testName }}</td>
         <td>{{ Quarantine.gateName }}</td>
+          <td>
+          <div *ngFor="let img of Quarantine.images">
+            <img src="img.url"/>
+          </div>
+        </td>
         <td><a [routerLink]="['/Quarantine-details', Quarantine._id]">Show Detail</a></td>
       </tr>
     </tbody>
